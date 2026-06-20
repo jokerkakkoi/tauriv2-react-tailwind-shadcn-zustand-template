@@ -10,7 +10,7 @@ mod app_init {
     }
 
     /// One-time setup after the app handle exists (portable dirs, config, etc.).
-    pub fn setup_app(app: &tauri::App) -> Result<(), Box<dyn std::error::Error>> {
+    pub fn setup_app(app: &tauri::App) -> anyhow::Result<()> {
         let _handle = app.handle();
         // e.g. utils::paths::ensure_data_dir(_handle)?;
         Ok(())
